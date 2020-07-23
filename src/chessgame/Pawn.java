@@ -23,58 +23,81 @@ public class Pawn extends Chess_Piece {
         if ("Knight".equals(name)) {
             return knight(row, col);
         }
-        if (null != color) switch (color) {
-            case "Black":
-                if (row_Coor == 1) {
-                    if (col == col_Coor && (row == row_Coor + 1 || row == row_Coor + 2)) {
-                        col_Coor = col;
+        if (null != color) {
+            switch (color) {
+                case "Black":
+                    if (row_Coor == 1) {
+                        if (col == col_Coor && (row == row_Coor + 1 || row == row_Coor + 2)) {
+                            col_Coor = col;
+                            row_Coor = row;
+                            return true;
+                        }
+                    }
+                    if (col == col_Coor && row == row_Coor + 1) {
+                        if (row == 7) {
+                            System.out.println("err");
+                            GUIUpgrade();
+                        }
                         row_Coor = row;
+                        col_Coor = col;
                         return true;
                     }
-                }   if (col == col_Coor && row == row_Coor + 1) {
-                    if (row == 7) {
-                        GUIUpgrade();
-                    }
-                    row_Coor = row;
-                    col_Coor = col;
-                    return true;
-                }   if(col == col_Coor-1 && row == row_Coor+1 && board[row][col] != null){
-                    row_Coor = row;
-                    col_Coor = col;
-                return true;
-                }   if(col == col_Coor+1 && row == row_Coor+1 && board[row][col] != null){
-                    row_Coor = row;
-                    col_Coor = col;
-                    return true;
-                }   break;
-            case "White":
-                if (row_Coor == 6) {
-                    if (col == col_Coor && (row == row_Coor - 1 || row == row_Coor - 2)) {
-                        col_Coor = col;
+                    if (col == col_Coor - 1 && row == row_Coor + 1 && board[row][col] != null) {
+                        if (row == 7) {
+                            GUIUpgrade();
+                        }
                         row_Coor = row;
+                        col_Coor = col;
                         return true;
                     }
-                }   if (col == col_Coor && row == row_Coor - 1) {
-                    if (row == 0) {
-                        GUIUpgrade();
+                    if (col == col_Coor + 1 && row == row_Coor + 1 && board[row][col] != null) {
+                        if (row == 7){
+                            GUIUpgrade();
+                        }
+                        row_Coor = row;
+                        col_Coor = col;
+                        return true;
                     }
-                    row_Coor = row;
-                    col_Coor = col;
-                    return true;
-                }   if(col == col_Coor-1 && row == row_Coor-1 && board[row][col] != null){
-                row_Coor = row;
-                col_Coor = col;
-                return true;
-                }   if(col == col_Coor+1 && row == row_Coor-1 && board[row][col] != null){
-                row_Coor = row;
-                col_Coor = col;
-                return true;
-            }   break;
+                    break;
+                case "White":
+                    if (row_Coor == 6) {
+                        if (col == col_Coor && (row == row_Coor - 1 || row == row_Coor - 2)) {
+                            col_Coor = col;
+                            row_Coor = row;
+                            return true;
+                        }
+                    }
+                    if (col == col_Coor && row == row_Coor - 1) {
+                        if (row == 0) {
+                            GUIUpgrade();
+                        }
+                        row_Coor = row;
+                        col_Coor = col;
+                        return true;
+                    }
+                    if (col == col_Coor - 1 && row == row_Coor - 1 && board[row][col] != null) {
+                        if(row == 0){
+                            GUIUpgrade();
+                        }
+                        row_Coor = row;
+                        col_Coor = col;
+                        return true;
+                    }
+                    if (col == col_Coor + 1 && row == row_Coor - 1 && board[row][col] != null) {
+                        if(row == 0){
+                            GUIUpgrade();
+                        }
+                        row_Coor = row;
+                        col_Coor = col;
+                        return true;
+                    }
+                    break;
+            }
         }
 
         return false;
     }
-    
+
     /*
     
     */
