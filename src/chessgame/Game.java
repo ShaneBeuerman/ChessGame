@@ -92,7 +92,7 @@ public class Game {
         board[1][1] = bP[1];
         bP[2] = new Pawn("Black", "Pawn", "Bp", 1, 2);
         board[1][2] = bP[2];
-        bP[3] = new Pawn("Black", "Pawn", "Bp", 6, 6);
+        bP[3] = new Pawn("Black", "Pawn", "Bp", 1, 3);
         board[1][3] = bP[3];        
         bP[4] = new Pawn("Black", "Pawn", "Bp", 1, 4);
         board[1][4] = bP[4];
