@@ -10,9 +10,9 @@ public class Queen extends Chess_Piece{
     
     @Override
     boolean movement(int row, int col){
-        Bishop test = new Bishop(color, name, shortName, row_Coor, col_Coor);
-        Rook test2 = new Rook(color, name, shortName, row_Coor, col_Coor);
-        if(test.movement(row,col) || test2.movement(row,col)){
+        Bishop bish = new Bishop(color, name, shortName, row_Coor, col_Coor);
+        Rook rook = new Rook(color, name, shortName, row_Coor, col_Coor);
+        if(bish.movement(row,col) || rook.movement(row,col)){
             row_Coor = row;
             col_Coor = col;
             return true;

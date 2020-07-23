@@ -15,8 +15,6 @@ public class Bishop extends Chess_Piece {
         boolean[] bounded = {false, false, false, false};
         int down = 7-row;
         int up = 7 - down;
-        System.out.println(up);
-        System.out.println(down);
         int[] bounds = {0,0,0,0};
         for(int i = 1; i < 8; i++){
             if(row_Coor-i >= 0){//up
@@ -64,9 +62,6 @@ public class Bishop extends Chess_Piece {
                 }
             }
         }
-        
-        //System.out.println(bounds[0] + " " + bounds[1]);
-        //System.out.println(bounds[2] + " " + bounds[3]);
         
         if(row-row_Coor < 0 && col-col_Coor < 0){//up left
             if(rowVal > bounds[0]){

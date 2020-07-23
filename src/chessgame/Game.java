@@ -127,7 +127,7 @@ public class Game {
 
     /*
      Begins the game played by text. The X and Y
-     posiitions are chosen by a scanner. It is tedious,
+     positions are chosen by a scanner. It is tedious,
      but this is how it works until a GUI can be made.
     
      */

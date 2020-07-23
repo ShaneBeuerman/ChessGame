@@ -59,7 +59,6 @@ public class ChessGUI {
                         curColor = "White";
                     }
                 }
-                //System.out.println(row1 + " " + col1 + " " + row2 + " " + col2);
                 System.out.println(curColor + "'s turn");
                 turnOrder.setText(curColor + "'s turn");
                 chess.boardUpdate();
@@ -94,7 +93,7 @@ public class ChessGUI {
     }
     
     /*
-    
+        A popup comes up when the pawn gets to be upgraded.
     */
     public static void pawnUpgrade(Chess_Piece cur_Piece){
         JFrame popUp = new JFrame();
@@ -124,7 +123,8 @@ public class ChessGUI {
     
     
     /*
-        used to upgrade pawns
+        ActionListener used to upgrade pawns. It changes the pawn's name,
+        short name, and what type of piece it is.
     */
     static class pawnPress implements ActionListener{
         
@@ -161,28 +161,26 @@ public class ChessGUI {
             int r = 0;
             int c = 0;
             int counter = 0;
-            int col = 120; // orig 150
-            int row = 40; // orig 50
+            int col = 120;
+            int row = 40;
             int asciiValue = 97;
             Integer count = 0;
             for(int i = 0; i < 8; i++){
                 count = i;
-                //Character a = (char)asciiValue;
                 square.drawString(count.toString(), col, row);
-                col+=80; // orig 100
-                //asciiValue++;
+                col+=80;
             }
-            col=40; // orig 50
-            row=120; // orig 150
+            col=40;
+            row=120;
             for(int i = 0; i < 8; i++){
                 count = i;
                 square.drawString(count.toString(), col, row);
-                row+=80; // orig 100
+                row+=80;
             }
 
             
-            for (int i = 80; i < 720; i += 80) { // orig 100 900 100
-                for (int j = 80; j < 720; j += 80) { //same as above
+            for (int i = 80; i < 720; i += 80) {
+                for (int j = 80; j < 720; j += 80) {
                     if (red) {
                         square.setColor(Color.red);
                         red = !red;
@@ -190,10 +188,10 @@ public class ChessGUI {
                         square.setColor(Color.black);
                         red = !red;
                     }
-                    square.fillRect(i, j, 80, 80); //orig 100
+                    square.fillRect(i, j, 80, 80);
                     square.setColor(Color.white);
                     if (board[r][c] != null) {
-                        square.drawString(board[r][c].shortName, i + 32, j + 40); //orig 40 50
+                        square.drawString(board[r][c].shortName, i + 32, j + 40);
                     }
                     r++;
                 }
@@ -210,6 +208,9 @@ public class ChessGUI {
             Game.initializeBoard();
         }
         
+        /*
+            only called to repaint()
+        */
         public void boardUpdate(){
             repaint();
         }
@@ -218,7 +219,6 @@ public class ChessGUI {
         */
         public void move(int turn) throws InterruptedException {
             Game.textBoard(turn);
-            //button press
             repaint();
             if(!Game.win()){
                 turn++;

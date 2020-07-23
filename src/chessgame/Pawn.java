@@ -17,14 +17,12 @@ public class Pawn extends Chess_Piece {
         if ("Rook".equals(name)) {
             return rook(row, col);
         }
-
         if ("Bishop".equals(name)) {
             return bishop(row, col);
         }
         if ("Knight".equals(name)) {
             return knight(row, col);
         }
-        
         if (null != color) switch (color) {
             case "Black":
                 if (row_Coor == 1) {
@@ -76,15 +74,16 @@ public class Pawn extends Chess_Piece {
 
         return false;
     }
-
+    
+    /*
+    
+    */
     boolean bishop(int row, int col) {
         int rowVal = Math.abs(row - row_Coor);
         int colVal = Math.abs(col - col_Coor);
         boolean[] bounded = {false, false, false, false};
         int down = 7 - row;
         int up = 7 - down;
-        System.out.println(up);
-        System.out.println(down);
         int[] bounds = {0, 0, 0, 0};
         for (int i = 1; i < 8; i++) {
             if (row_Coor - i >= 0) {//up
@@ -133,9 +132,6 @@ public class Pawn extends Chess_Piece {
             }
         }
 
-        System.out.println(bounds[0] + " " + bounds[1]);
-        System.out.println(bounds[2] + " " + bounds[3]);
-
         if (row - row_Coor < 0 && col - col_Coor < 0) {//up left
             if (rowVal > bounds[0]) {
                 return false;
@@ -165,7 +161,10 @@ public class Pawn extends Chess_Piece {
         return true;
 
     }
-
+    
+    /*
+    
+    */
     boolean queen(int row, int col) {
         Bishop test = new Bishop(color, name, shortName, row_Coor, col_Coor);
         Rook test2 = new Rook(color, name, shortName, row_Coor, col_Coor);
@@ -176,7 +175,10 @@ public class Pawn extends Chess_Piece {
         }
         return false;
     }
-
+    
+    /*
+    
+    */
     boolean rook(int row, int col) {
         int[] colBounds = {0, 7};
         int[] rowBounds = {0, 7};
@@ -210,6 +212,9 @@ public class Pawn extends Chess_Piece {
         return false;
     }
 
+    /*
+    
+    */
     boolean knight(int x, int y) {
         int xAbs = Math.abs(x - row_Coor);
         int yAbs = Math.abs(y - col_Coor);
@@ -226,11 +231,17 @@ public class Pawn extends Chess_Piece {
         return false;
     }
 
+    /*
+    
+    */
     void GUIUpgrade() {
         ChessGUI.pawnUpgrade(this);
 
     }
 
+    /*
+    
+    */
     void upgrade() {
         Scanner user = new Scanner(System.in);
         System.out.println("Upgrade to? 1 for knight, 2 for queen, 3 for rook, 4 for bishop");
