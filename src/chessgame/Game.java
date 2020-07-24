@@ -201,6 +201,7 @@ public class Game {
         if (board[locCol][locRow].movement(desCol, desRow)) {
             if (board[desCol][desRow] != null && board[desCol][desRow].name.equals("King")) {
                 won = true;
+                ChessGUI.victory();
                 System.out.println(color + " wins.");
             }
             board[desCol][desRow] = board[locCol][locRow];

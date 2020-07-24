@@ -86,6 +86,13 @@ public class ChessGUI {
     }
     
     /*
+        Popup Message when you win.
+    */
+    public static void victory(){
+        JOptionPane.showMessageDialog(null, "You Won!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    /*
         Popup message when movement is bad.
     */
     public static void errorPopup(){

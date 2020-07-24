@@ -35,7 +35,6 @@ public class Pawn extends Chess_Piece {
                     }
                     if (col == col_Coor && row == row_Coor + 1) {
                         if (row == 7) {
-                            System.out.println("err");
                             GUIUpgrade();
                         }
                         row_Coor = row;
