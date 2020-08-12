@@ -220,18 +220,6 @@ public class ChessGUI {
         */
         public void boardUpdate(){
             repaint();
-        }
-        /*
-            Updates the board with each move until a winner is declared.
-        */
-        public void move(int turn) throws InterruptedException {
-            Game.textBoard(turn);
-            repaint();
-            if(!Game.win()){
-                turn++;
-                move(turn);
-            }
-        }
-        
+        }        
     }
 }

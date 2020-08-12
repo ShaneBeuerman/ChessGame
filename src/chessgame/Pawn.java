@@ -139,7 +139,6 @@ public class Pawn extends Chess_Piece {
     }
     
     /*
-    
     */
     void GUIUpgrade() {
         ChessGUI.pawnUpgrade(this);

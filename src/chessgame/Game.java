@@ -1,7 +1,5 @@
 package chessgame;
 
-import java.util.Scanner;
-
 /*
 
 */
@@ -104,64 +102,10 @@ public class Game {
         board[1][7] = bP[7];
     }
 
-    /*
-     Prints the board in text form. Used for testing 
-     before a GUI has been created for this.
-     */
-    public static void printBoard() {
-        System.out.println("  0  1  2  3  4  5  6  7");
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (j == 0) {
-                    System.out.print(i + " ");
-                }
-                if (board[i][j] == null) {
-                    System.out.print("__ ");
-                } else {
-                    System.out.print(board[i][j].shortName + " ");
-                }
-            }
-            System.out.println();
-        }
-    }
 
     /*
-     Begins the game played by text. The X and Y
-     positions are chosen by a scanner. It is tedious,
-     but this is how it works until a GUI can be made.
-    
-     */
-    public static void textBoard(int turn) {
-        String[][] tBoard = new String[8][8];
-        Scanner scan = new Scanner(System.in);
-        printBoard();
-        String color = "White";
-        if (turn % 2 == 0) {
-            color = "Black";
-        }
-        int rowLocation;
-        int colLocation;
-        int rowDestination;
-        int colDestination;
-        do {
-            System.out.println(color + "'s turn");
-            System.out.println("Choose a piece.");
-            System.out.println("Type in X Position");
-            rowLocation = scan.nextInt();
-            System.out.println("Type in Y Position");
-            colLocation = scan.nextInt();
-            System.out.println("Choose a space.");
-            System.out.println("Type in X Position");
-            rowDestination = scan.nextInt();
-            System.out.println("Type in Y Position");
-            colDestination = scan.nextInt();
-        } while (!movePiece(rowLocation, colLocation, rowDestination, colDestination, color));
-    }
-
-    /*
-     Check if king is killed. Also checks if user inputs a one.
-     That is only used for testing and to leave the game early.
-     */
+     Check if king is killed.
+    */
     public static boolean win() {
         if (won) {
             return true;

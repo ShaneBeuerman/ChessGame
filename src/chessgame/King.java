@@ -7,7 +7,7 @@ public class King extends Chess_Piece{
     }
     
     @Override
-    boolean movement(int row, int col){//update
+    boolean movement(int row, int col){
         return !(Math.abs(row-row_Coor) >= 2 || Math.abs(col-col_Coor) >= 2);
     }
 }
