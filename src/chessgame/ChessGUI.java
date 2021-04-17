@@ -29,16 +29,12 @@ public class ChessGUI {
         chess chess = new chess();
         chess.start();
         
-        JPanel cPanel = new JPanel();
-        cPanel.setSize(w, h);
-        cPanel.add(chess);
-        
         frame.setSize(w+100, h+50);
         frame.add(chess);
         
         JLabel turnOrder = new JLabel(curColor + "'s Turn");
         JLabel start = new JLabel("Starting Position");
-        JLabel end = new JLabel("EndingPosition");
+        JLabel end = new JLabel("Ending Position");
         JTextField rowStart = new JTextField("col");
         JTextField colStart = new JTextField("row");
         JTextField rowCoor = new JTextField("col");

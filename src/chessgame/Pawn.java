@@ -1,6 +1,5 @@
 package chessgame;
 
-import java.util.Scanner;
 import static chessgame.Game.board;
 
 public class Pawn extends Chess_Piece {
