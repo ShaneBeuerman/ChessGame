@@ -13,6 +13,12 @@ public class Pawn extends Chess_Piece {
     Bishop bish = new Bishop(color, name, shortName, row_Coor, col_Coor);
     Knight knight = new Knight(color, name, shortName, row_Coor, col_Coor);
 
+    /*
+        Pawns can move forward once or twice from their initial position, but only once after they leave
+        their initial position.Pawns cannot move backwards. Pawns can attack diagonally only directly in
+        front of them. A pawn can be upgraded to either a queen, rook, bishop or knight if they reach
+        the end of the board.
+    */
     @Override
     boolean movement(int row, int col) {
         if ("Queen".equals(name)) {

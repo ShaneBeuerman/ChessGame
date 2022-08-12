@@ -6,6 +6,9 @@ public class Queen extends Chess_Piece{
         super(color, name, shortName, row_Coor, col_Coor);
     }
     
+    /*
+        Queens can move diagonally like a bishop, or vertically and horizontally like a rook.
+    */
     @Override
     boolean movement(int row, int col){
         Bishop bish = new Bishop(color, name, shortName, row_Coor, col_Coor);

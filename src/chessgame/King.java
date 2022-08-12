@@ -6,6 +6,9 @@ public class King extends Chess_Piece{
         super(color, name, shortName, row_Coor, col_Coor);
     }
     
+    /*
+        Kings can only move one space at a time in any direction.
+    */
     @Override
     boolean movement(int row, int col){
         return !(Math.abs(row-row_Coor) >= 2 || Math.abs(col-col_Coor) >= 2);

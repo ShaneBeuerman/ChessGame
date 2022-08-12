@@ -8,6 +8,10 @@ public class Rook extends Chess_Piece{
         super(color, name, shortName, row_Coor, col_Coor);
     }
     
+    /*
+        Rooks can move vertically and horizontally any amount they want as long as
+        a piece isn't in the way.
+    */
     @Override
     boolean movement(int row, int col){
         int[] colBounds = {0,7};

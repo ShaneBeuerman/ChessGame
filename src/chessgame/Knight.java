@@ -6,6 +6,9 @@ public class Knight extends Chess_Piece{
         super(color, name, shortName, row_Coor, col_Coor);
     }
     
+    /*  
+        Knights can move in L-shaped patterns. They can move around pieces too.
+    */
     @Override
     boolean movement(int row, int col){
         int rowAbs = Math.abs(row-row_Coor);

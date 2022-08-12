@@ -7,7 +7,10 @@ public class Bishop extends Chess_Piece {
     public Bishop(String color, String name, String shortName, int row_Coor, int col_Coor) {
         super(color, name, shortName, row_Coor, col_Coor);
     }
-
+    
+    /*
+        Bishops can move only move diagonally
+    */
     @Override
     boolean movement(int row, int col) {
         int rowVal = Math.abs(row - row_Coor);
