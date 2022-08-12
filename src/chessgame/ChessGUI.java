@@ -163,11 +163,9 @@ public class ChessGUI {
             boolean red = false;
             int r = 0;
             int c = 0;
-            int counter = 0;
             int col = 120;
             int row = 40;
-            int asciiValue = 97;
-            Integer count = 0;
+            Integer count;
             for(int i = 0; i < 8; i++){
                 count = i;
                 square.drawString(count.toString(), col, row);

@@ -13,8 +13,6 @@ public class Bishop extends Chess_Piece {
         int rowVal = Math.abs(row - row_Coor);
         int colVal = Math.abs(col - col_Coor);
         boolean[] bounded = {false, false, false, false};
-        int down = 7-row;
-        int up = 7 - down;
         int[] bounds = {0,0,0,0};
         for(int i = 1; i < 8; i++){
             if(row_Coor-i >= 0){//up

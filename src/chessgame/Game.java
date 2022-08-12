@@ -107,10 +107,7 @@ public class Game {
      Check if king is killed.
     */
     public static boolean win() {
-        if (won) {
-            return true;
-        }
-        return false;
+        return won;
     }
 
     /*
